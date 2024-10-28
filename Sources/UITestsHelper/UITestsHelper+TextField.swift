@@ -8,13 +8,19 @@ import XCTest
 
 @MainActor
 public extension UITestsHelper {
-    func insert(text: String, in textFieldIdentifier: String) {
-        let textField = app.textFields[textFieldIdentifier]
+    func insert(text: String, in textFieldIdentifier: String, isSecure: Bool = false) {
+        var textField = app.textFields[textFieldIdentifier]
+        if isSecure {
+            textField = app.secureTextFields[textFieldIdentifier]
+        }
         XCTAssert(textField.waitForExistence(timeout: 2))
         textField.insertText(text: text)
     }
-    func clear(textField textFieldIdentifier: String) {
-        let textField = app.textFields[textFieldIdentifier]
+    func clear(textField textFieldIdentifier: String, isSecure: Bool = false) {
+        var textField = app.textFields[textFieldIdentifier]
+        if isSecure {
+            textField = app.secureTextFields[textFieldIdentifier]
+        }
         XCTAssert(textField.exists)
         textField.clearText()
     }
