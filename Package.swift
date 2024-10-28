@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "UITestsHelper",
+    platforms: [
+          .iOS(.v15) // adjust minimum version as needed
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
