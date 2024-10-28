@@ -26,20 +26,21 @@ public class UITestsHelper {
         self.app = app
         self.configuration = configuration
     }
-    @MainActor public func launch() {
-        app.launch()
-    }
 }
 
 @MainActor
 public extension UITestsHelper {
   
+    func launch() {
+        app.launch()
+    }
+    
     func checkHasLoader() {
         let loader = app.activityIndicators[configuration.loaderIdentifier]
         XCTAssert(loader.waitForExistence(timeout: 1))
     }
     
-    func pause(interval: TimeInterval) {
+    func wait(interval: TimeInterval) {
         sleep(UInt32(interval))
     }
     func navigateBack() {
@@ -50,5 +51,12 @@ public extension UITestsHelper {
         if let interval {
             sleep(UInt32(interval))
         }
+    }
+    
+    func takeScreenshot(name: String, in testCase: XCTestCase) {
+        let attachment = XCTAttachment(screenshot: app.screenshot())
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        testCase.add(attachment)
     }
 }
