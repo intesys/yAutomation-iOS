@@ -5,24 +5,29 @@
 //  Created by Davide Benini on 21/10/24.
 //
 import XCTest
-public struct HelperConfiguration {
+public struct UITestsHelperConfiguration {
+    
+    public static let defaultLoaderIdentifier = "Loader"
+    public static let defaultBackButtonIdentifier = "BackButton"
+    public static let defaultScrollingVelocity: XCUIGestureVelocity = 200
+    
     var loaderIdentifier: String
     var backButtonIdentifier: String
     var scrollingVelocity: XCUIGestureVelocity
 
-    public static var defaultConfiguration: HelperConfiguration {
-        HelperConfiguration(loaderIdentifier: "Loader",
-                            backButtonIdentifier: "BackButton",
-                            scrollingVelocity: 200)
+    public static var defaultConfiguration: UITestsHelperConfiguration {
+        UITestsHelperConfiguration(loaderIdentifier: UITestsHelperConfiguration.defaultLoaderIdentifier,
+                                   backButtonIdentifier: UITestsHelperConfiguration.defaultBackButtonIdentifier ,
+                                   scrollingVelocity: UITestsHelperConfiguration.defaultScrollingVelocity)
     }
 }
 
 
 public class UITestsHelper {
     public var app: XCUIApplication
-    public var configuration: HelperConfiguration = .defaultConfiguration
+    public var configuration: UITestsHelperConfiguration = .defaultConfiguration
     
-    public init(app: XCUIApplication, configuration: HelperConfiguration) {
+    public init(app: XCUIApplication, configuration: UITestsHelperConfiguration) {
         self.app = app
         self.configuration = configuration
     }
