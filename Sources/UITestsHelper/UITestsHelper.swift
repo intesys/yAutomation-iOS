@@ -7,8 +7,8 @@
 import XCTest
 public struct UITestsHelperConfiguration {
     
-    public static let defaultLoaderIdentifier = "Loader"
-    public static let defaultBackButtonIdentifier = "BackButton"
+    public static let defaultLoaderIdentifier = "loader"
+    public static let defaultBackButtonIdentifier = "backButton"
     public static let defaultScrollingVelocity: XCUIGestureVelocity = 200
     
     var loaderIdentifier: String
