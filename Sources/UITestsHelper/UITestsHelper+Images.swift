@@ -8,6 +8,11 @@ import XCTest
 
 @MainActor
 public extension UITestsHelper {
+    
+    /// Asserts that the specified number of images is present on screen
+    /// - Parameters:
+    ///   - count: The number of images gthat ,must be on screen
+    ///   - allowMore: Specifies if more images can be present or if it must be an exact match
     func assertHasImages(count: Int, allowMore: Bool = false) {
         let images = app.images.allElementsBoundByIndex
         
@@ -19,4 +24,5 @@ public extension UITestsHelper {
             XCTAssert(totalCount == count)
         }
     }
+
 }

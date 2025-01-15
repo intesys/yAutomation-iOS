@@ -8,6 +8,21 @@ import XCTest
 
 @MainActor
 public extension UITestsHelper {
+    
+    /// Asserts that a slider with the provided identifier is present on screen
+    /// - Parameters:
+    ///   - sliderIdentifier: The slider identifier
+    ///   -  timeout: The timeout to wait for the element existence. Defaults: 0
+    func assertSliderExists(_ sliderIdentifier: String, timeout: TimeInterval = 0) {
+        let slider = app.sliders.matching(identifier: sliderIdentifier).firstMatch
+        XCTAssert(slider.waitForExistence(timeout: timeout))
+    }
+    
+    /// Sets the slider with the provided identifier to the given value
+    /// - Parameters:
+    ///   - slider: the slider identifier
+    ///   - value: the value to be set
+    ///   - wait: Optional: a delay which will be applied after the slider has been set
     func set(slider: String, to value: Double, wait: TimeInterval? = nil) {
         let slider = app.sliders.matching(identifier: slider).firstMatch
         XCTAssert(slider.exists)
