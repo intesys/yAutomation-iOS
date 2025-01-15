@@ -9,6 +9,20 @@ import XCTest
 
 @MainActor
 public extension UITestsHelper {
+    
+    /// Asserts that a date picker with the provided identifier is present on screen
+    /// - Parameters:
+    ///   - datePickerIdentifier: The date picker identifier
+    ///   -  timeout: The timeout to wait for the element existence. Defaults: 0
+    func assertDatePickerExists(_ datePickerIdentifier: String, timeout: TimeInterval = 0) {
+        let picker = app.datePickers.matching(identifier: datePickerIdentifier).firstMatch
+        XCTAssert(picker.waitForExistence(timeout: timeout))
+    }
+    
+    /// Select the date picker with the given identifier
+    /// - Parameters:
+    ///   - datePickerIdentifier: The date picker identifier
+    ///   - wait: Optional: a delay which will be applied after selection
     func select(datePickerIdentifier: String, wait: TimeInterval? = nil) {
         let picker = app.datePickers.matching(identifier: datePickerIdentifier).firstMatch
         XCTAssert(picker.exists)
@@ -19,6 +33,13 @@ public extension UITestsHelper {
 
     }
     
+    /// Picks a date in the date picker with the given identifier
+    /// - Parameters:
+    ///   - day: The day of the month
+    ///   - month: The month as an Int
+    ///   - year: The year
+    ///   - datePickerIdentifier: The date picker identifier
+    ///   - wait: Optional: a delay which will be applied after selection
     func pickDateInCalendarPicker(day: Int, month: Int, year: Int, in datePickerIdentifier: String, wait: TimeInterval? = nil) {
         
         let tappedPicker = app.datePickers.matching(identifier: datePickerIdentifier).firstMatch
@@ -41,6 +62,11 @@ public extension UITestsHelper {
         waitIfAny(wait)
     }
     
+    /// Sets the specified day and month on the given date picker
+    /// - Parameters:
+    ///   - month: The month as an Int
+    ///   - year: The year
+    ///   - picker: The target date picker
     private func setCalendarDatePicker(month: Int, year: Int, picker: XCUIElement) {
         var monthYearButton = picker.buttons["DatePicker.Show"].firstMatch
 
@@ -71,6 +97,13 @@ public extension UITestsHelper {
         monthYearButton.tap()
     }
     
+    /// Picks a specific day in the wheel picker
+    /// - Parameters:
+    ///   - day: The day of the month
+    ///   - month: The month as an Int
+    ///   - year: The year
+    ///   - datePickerIdentifier: The date picker identifier
+    ///   - wait: Optional: a delay which will be applied after selection
     func pickDateInWheelPicker(day: Int, month: Int, year: Int, in datePickerIdentifier: String, wait: TimeInterval? = nil) {
         
         let picker = app.datePickers.matching(identifier: datePickerIdentifier).firstMatch

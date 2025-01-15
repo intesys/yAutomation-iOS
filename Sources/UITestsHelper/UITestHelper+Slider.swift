@@ -36,7 +36,6 @@ public extension UITestsHelper {
         // Double set necessary because of dragging inertia
         slider.adjust(toNormalizedSliderPosition: normalizedPosition)
         waitIfAny(wait)
-
-
     }
+
 }

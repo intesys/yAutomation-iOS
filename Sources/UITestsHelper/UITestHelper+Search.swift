@@ -8,6 +8,10 @@ import XCTest
 
 @MainActor
 public extension UITestsHelper {
+    
+    /// Returns the first text field on the screen
+    /// - Parameter revealHidden: whether to scroll down to reveal a hidden table text field
+    /// - Returns: the serach field
     func firstSearchField(revealHidden: Bool) -> XCUIElement {
         var field =  app.searchFields.firstMatch
         if field.exists {
@@ -19,14 +23,23 @@ public extension UITestsHelper {
         return field
     }
     
+    /// Inserts a given text into the provided text field
+    /// - Parameters:
+    ///   - text: The text to search
+    ///   - searchField: The text field
     func insert(text: String, inSearchField searchField: XCUIElement) {
-        XCTAssert(searchField.waitForExistence(timeout: 2))
+        XCTAssert(searchField.exists)
         searchField.insertText(text: text)
     }
     
+    /// Inserts a given text into the the text field with the given identifier
+    /// - Parameters:
+    ///   - text: The text to search
+    ///   - identifier: The text field identifier
     func insert(text: String, inSearchFieldIdentifiedBy identifier: String) {
-        var field = app.searchFields[identifier]
-        XCTAssert(field.waitForExistence(timeout: 2))
+        let field = app.searchFields[identifier]
+        XCTAssert(field.exists)
         insert(text: text, inSearchField: field)
     }
+
 }
