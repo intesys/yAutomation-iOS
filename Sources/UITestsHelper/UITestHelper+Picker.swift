@@ -11,6 +11,11 @@ import XCTest
 @MainActor
 public extension UITestsHelper {
     
+    /// Select the give text in the specified list picker; optionally specify a delay after the action
+    /// - Parameters:
+    ///   - text: The text to select
+    ///   - pickerIdentifier: The identifier of the list picker to use
+    ///   - wait: Optional: a delay which will be applied after selection
     func pickInListPicker(text: String, in pickerIdentifier: String, wait: TimeInterval? = nil) {
         let pickerButton = app.buttons.matching(identifier: pickerIdentifier).firstMatch
         XCTAssert(pickerButton.exists)
@@ -22,6 +27,11 @@ public extension UITestsHelper {
         waitIfAny(wait)
     }
     
+    /// Select the give text in the specified wheel picker; optionally specify a delay after the action
+    /// - Parameters:
+    ///   - text: The text to select
+    ///   - pickerIdentifier: The identifier of the wheel picker to use
+    ///   - wait: Optional: a delay which will be applied after selection
     func pickInWheelPicker(text: String, in pickerIdentifier: String, wait: TimeInterval? = nil) {
         let picker = app.pickers.matching(identifier: pickerIdentifier).firstMatch
         XCTAssert(picker.exists)

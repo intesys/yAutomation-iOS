@@ -73,7 +73,7 @@ public extension XCUIElement {
         }
     }
     
-    func visible() -> Bool {
+    private func visible() -> Bool {
         guard self.exists && !self.frame.isEmpty else { return false }
         return XCUIApplication().windows.element(boundBy: 0).frame.contains(self.frame)
     }
