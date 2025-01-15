@@ -8,7 +8,7 @@ import XCTest
 
 @MainActor
 public extension UITestsHelper {
-    func checkHasImages(count: Int, allowMore: Bool = false) {
+    func assertHasImages(count: Int, allowMore: Bool = false) {
         let images = app.images.allElementsBoundByIndex
         
         let tabBarImages = app.tabBars.firstMatch.images.allElementsBoundByIndex

@@ -13,15 +13,15 @@ public extension UITestsHelper {
         app.buttons[title].firstMatch
     }
     func select(item: String, inMenu menu: String) {
-        select(submenuPath: [item], inMenu: menu)
+        select(path: [item], inMenu: menu)
     }
     
-    func select(submenuPath: [String], inMenu menu: String) {
+    func select(path: [String], inMenu menu: String) {
         let menu = app.buttons[menu].firstMatch
         XCTAssert(menu.exists)
         menu.tap()
         
-        for pathItem in submenuPath {
+        for pathItem in path {
             let itemElement = app.buttons[pathItem]
             itemElement.tap()
         }

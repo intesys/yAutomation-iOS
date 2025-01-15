@@ -8,15 +8,15 @@ import XCTest
 
 @MainActor
 public extension UITestsHelper {
-    /// Check if an alert exists
-    func checkAlertExists() {
+    /// Asserts that an alert exists
+    func assertAlertExists() {
         let alert = app.alerts.firstMatch
         XCTAssert(alert.waitForExistence(timeout: 1))
     }
 
-    /// Check if an alert has buttons with the given titles
+    /// Asserts that an alert has buttons with the given titles
     /// - Parameter buttons: the title of the buttons
-    func checkAlertHasButtons(_ buttons: [String]) {
+    func assertAlertHasButtons(_ buttons: [String]) {
         let alert = app.alerts.firstMatch
         XCTAssert(alert.waitForExistence(timeout: 1))
         
@@ -26,16 +26,15 @@ public extension UITestsHelper {
         }
     }
     
-    /// Check if an action sheet exists
-    func checkActionSheetExists() {
+    /// Asserts that an action sheet exists
+    func assertActionSheetExists() {
         let sheet = app.sheets.firstMatch
         XCTAssert(sheet.waitForExistence(timeout: 1))
     }
     
-    /// Check if an action sheet has buttons with the given titles
-    /// Check if an action sheet has buttons with the given titles
+    /// Asserts that an action sheet has buttons with the given titles
     /// - Parameter buttons: the title of the buttons
-    func checkActionSheetHasButtons(_ buttons: [String]) {
+    func assertActionSheetHasButtons(_ buttons: [String]) {
         let sheet = app.sheets.firstMatch
         XCTAssert(sheet.waitForExistence(timeout: 1))
         

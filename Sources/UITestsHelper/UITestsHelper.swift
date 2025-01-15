@@ -40,22 +40,23 @@ public extension UITestsHelper {
         app.launch()
     }
     
-    func checkHasLoader() {
+    func assertHasActivityIndicator() {
         let loader = app.activityIndicators[configuration.loaderIdentifier]
         XCTAssert(loader.waitForExistence(timeout: 1))
     }
     
     func wait(interval: TimeInterval) {
-        sleep(UInt32(interval))
-    }
-    func navigateBack() {
-        tap(button: configuration.backButtonIdentifier)
+        waitIfAny(interval)
     }
     
     func waitIfAny(_ interval: TimeInterval?) {
         if let interval {
             sleep(UInt32(interval))
         }
+    }
+
+    func navigateBack() {
+        tap(button: configuration.backButtonIdentifier)
     }
     
     func takeScreenshot(name: String, in testCase: XCTestCase) {

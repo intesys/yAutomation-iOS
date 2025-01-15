@@ -8,11 +8,11 @@ import XCTest
 
 @MainActor
 public extension UITestsHelper {
-    func checkHasTabBar(timeout: TimeInterval = 5) {
+    func assertHasTabBar(timeout: TimeInterval = 5) {
         let tabBar = app.tabBars.firstMatch
         XCTAssert(tabBar.exists)
     }
-    func checkTabBarHasTabs(count: Int) {
+    func assertTabBarHasTabs(count: Int) {
         let tabBar = app.tabBars.firstMatch
         XCTAssert(tabBar.exists)
         let tabs = tabBar.buttons.allElementsBoundByIndex
