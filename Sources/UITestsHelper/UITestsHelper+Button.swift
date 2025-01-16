@@ -9,7 +9,7 @@ import XCTest
 @MainActor
 public extension UITestsHelper {
 
-    /// Taps the button with tghe provided identifier
+    /// Taps the button with the provided identifier
     /// - Parameters:
     ///   - identifier: The button identifier
     ///   - wait: An optional delay after the tap

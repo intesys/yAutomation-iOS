@@ -27,7 +27,7 @@ public class UITestsHelper {
     public var app: XCUIApplication
     public var configuration: UITestsHelperConfiguration = .defaultConfiguration
     
-    public init(app: XCUIApplication, configuration: UITestsHelperConfiguration) {
+    public init(app: XCUIApplication, configuration: UITestsHelperConfiguration = .defaultConfiguration) {
         self.app = app
         self.configuration = configuration
     }
