@@ -1,6 +1,5 @@
 //
-//  UITestHelper+DatePicker.swift
-//  Sandboxer
+//  YRobot+DatePicker.swift
 //
 //  Created by Davide Benini on 24/10/24.
 //
@@ -8,7 +7,7 @@ import Foundation
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
     
     /// Asserts that a date picker with the provided identifier is present on screen
     /// - Parameters:

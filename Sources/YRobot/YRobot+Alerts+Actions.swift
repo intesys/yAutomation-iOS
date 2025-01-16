@@ -1,13 +1,12 @@
 //
-//  UITestHelper+Alerts+Actions.swift
-//  Sandboxer
+//  YRobot+Alerts+Actions.swift
 //
 //  Created by Davide Benini on 28/10/24.
 //
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
     /// Asserts that an alert exists
     func assertAlertExists() {
         let alert = app.alerts.firstMatch

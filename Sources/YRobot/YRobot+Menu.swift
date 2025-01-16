@@ -1,6 +1,5 @@
 //
-//  UITestsHelper+Menu.swift
-//  UITestsHelper
+//  YRobot+Menu.swift
 //
 //  Created by Davide Benini on 15/01/25.
 //
@@ -8,7 +7,7 @@
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
     
     /// Returns a menu with the given title
     /// - Parameter title: the menu title

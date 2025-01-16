@@ -1,13 +1,12 @@
 //
-//  Untitled.swift
-//  Sandboxer
+//  YRobot+Button.swift
 //
 //  Created by Davide Benini on 21/10/24.
 //
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
 
     /// Taps the button with the provided identifier
     /// - Parameters:

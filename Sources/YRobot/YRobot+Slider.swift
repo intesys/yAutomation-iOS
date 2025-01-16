@@ -1,13 +1,12 @@
 //
-//  UITestHelper+Slider.swift
-//  Sandboxer
+//  YRobot+Slider.swift
 //
 //  Created by Davide Benini on 28/10/24.
 //
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
     
     /// Asserts that a slider with the provided identifier is present on screen
     /// - Parameters:

@@ -1,6 +1,5 @@
 //
-//  UITestHelper+ScrollView.swift
-//  Sandboxer
+//  YRobot+ScrollView.swift
 //
 //  Created by Davide Benini on 23/10/24.
 //
@@ -12,7 +11,7 @@ public enum ScrollDirection {
 }
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
 
     /// Scrolls the given element until the button with the provided title is visible
     /// - Parameters:

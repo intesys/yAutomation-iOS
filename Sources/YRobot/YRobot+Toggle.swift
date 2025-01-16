@@ -1,13 +1,12 @@
 //
-//  UITestHelper+Toggle.swift
-//  Sandboxer
+//  YRobot+Toggle.swift
 //
 //  Created by Davide Benini on 28/10/24.
 //
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
     /// Toggles on the toggle element with the provided identifier
     /// - Parameters:
     ///   - toggleIidentifier: The toggle identifier

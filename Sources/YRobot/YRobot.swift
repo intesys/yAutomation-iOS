@@ -1,11 +1,10 @@
 //
-//  UITestsHelper.swift
-//  Sandboxer
+//  YRobot.swift
 //
 //  Created by Davide Benini on 21/10/24.
 //
 import XCTest
-public struct UITestsHelperConfiguration {
+public struct YRobotConfiguration {
     
     public static let defaultLoaderIdentifier = "loader"
     public static let defaultBackButtonIdentifier = "backButton"
@@ -15,26 +14,26 @@ public struct UITestsHelperConfiguration {
     var backButtonIdentifier: String
     var scrollingVelocity: XCUIGestureVelocity
 
-    public static var defaultConfiguration: UITestsHelperConfiguration {
-        UITestsHelperConfiguration(loaderIdentifier: UITestsHelperConfiguration.defaultLoaderIdentifier,
-                                   backButtonIdentifier: UITestsHelperConfiguration.defaultBackButtonIdentifier ,
-                                   scrollingVelocity: UITestsHelperConfiguration.defaultScrollingVelocity)
+    public static var defaultConfiguration: YRobotConfiguration {
+        YRobotConfiguration(loaderIdentifier: YRobotConfiguration.defaultLoaderIdentifier,
+                            backButtonIdentifier: YRobotConfiguration.defaultBackButtonIdentifier ,
+                            scrollingVelocity: YRobotConfiguration.defaultScrollingVelocity)
     }
 }
 
 
-public class UITestsHelper {
+public class YRobot {
     public var app: XCUIApplication
-    public var configuration: UITestsHelperConfiguration = .defaultConfiguration
+    public var configuration: YRobotConfiguration = .defaultConfiguration
     
-    public init(app: XCUIApplication, configuration: UITestsHelperConfiguration = .defaultConfiguration) {
+    public init(app: XCUIApplication, configuration: YRobotConfiguration = .defaultConfiguration) {
         self.app = app
         self.configuration = configuration
     }
 }
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
   
     func launch() {
         app.launch()

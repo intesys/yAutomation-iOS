@@ -1,6 +1,5 @@
 //
-//  UITestsHelper+Alert.swift
-//  Sandboxer
+//  YRobot+Alert.swift
 //
 //  Created by Davide Benini on 21/10/24.
 //
@@ -8,7 +7,7 @@
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
     
     /// Asserts that an alert is present on screen
     /// - Parameter timeout: The timeout to wait for the element existence. Defaults: 5

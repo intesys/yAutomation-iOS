@@ -1,13 +1,12 @@
 //
-//  UITestsHelper+Images.swift
-//  UITestsHelper
+//  YRobot+Images.swift
 //
 //  Created by Davide Benini on 15/01/25.
 //
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
     
     /// Asserts that the specified number of images is present on screen
     /// - Parameters:

@@ -4,26 +4,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "UITestsHelper",
+    name: "YRobot",
     platforms: [
           .iOS(.v15) // adjust minimum version as needed
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "UITestsHelper",
-            targets: ["UITestsHelper"]),
+            name: "YRobot",
+            targets: ["YRobot"]),
         .library(
-            name: "UITestsHelperConfigurator",
-            targets: ["UITestsHelperConfigurator"]),
+            name: "YRobotConfigurator",
+            targets: ["YRobotConfigurator"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "UITestsHelper"),
-        .target(name: "UITestsHelperConfigurator",
-                sources: ["UITestHelperConfigurator.swift"])
+            name: "YRobot"),
+        .target(name: "YRobotConfigurator",
+                sources: ["YRobotConfigurator.swift"])
 
     ]
 )

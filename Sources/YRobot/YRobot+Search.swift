@@ -1,13 +1,12 @@
 //
-//  UITestHelper+Search.swift
-//  UITestsHelper
+//  YRobot+Search.swift
 //
 //  Created by Davide Benini on 15/01/25.
 //
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
     
     /// Returns the first text field on the screen
     /// - Parameter revealHidden: whether to scroll down to reveal a hidden table text field

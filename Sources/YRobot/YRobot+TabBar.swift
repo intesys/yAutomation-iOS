@@ -1,13 +1,12 @@
 //
-//  UITestsHelper+Tabs.swift
-//  UITestsHelper
+//  YRobot+Tabs.swift
 //
 //  Created by Davide Benini on 15/01/25.
 //
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
     
     /// Asserts that a tab bar exists
     /// - Parameter timeout: The timeout to wait for the element existence. Defaults: 0

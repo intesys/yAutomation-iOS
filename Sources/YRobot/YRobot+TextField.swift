@@ -1,13 +1,12 @@
 //
-//  UITestsHelper+TextField.swift
-//  Sandboxer
+//  YRobot+TextField.swift
 //
 //  Created by Davide Benini on 21/10/24.
 //
 import XCTest
 
 @MainActor
-public extension UITestsHelper {
+public extension YRobot {
 
     /// Inserts the provided text into the text field matching fhe provided identifier
     /// - Parameters:
