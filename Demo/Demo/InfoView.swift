@@ -10,8 +10,12 @@ import SwiftUI
 struct InfoView: View {
     var body: some View {
         NavigationStack {
-            Text("These are some info, TODO")
-                .navigationTitle("ℹ️ Info")
+            VStack {
+                Text("Some general infos.\n\nThis screen was added mostly to showcase the usage of tabs.")
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("ℹ️ Info")
         }
     }
 }

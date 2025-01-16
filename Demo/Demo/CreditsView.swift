@@ -9,8 +9,12 @@ import SwiftUI
 struct CreditsView: View {
     var body: some View {
         NavigationStack {
-            Text("These are some credits, TODO")
-                .navigationTitle("📋 Credits")
+            VStack {
+                Text("YRobot was developed by Intesys for UI-testing its projects.")
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("📋 Credits")
         }
     }
 }

@@ -1,18 +1,18 @@
-# UITestsHelper
+# YRobot
 
 A simple library to make it easier to implemnt UI Tests.
 
-The library implements a `UITestsHelper` class that can be used to simplify the most common UI interactions.
+The library implements a `YRobot` class that can be used to simplify the most common UI interactions.
 
 ## Usage
 
-In the typical usage, UITestsHelper is initialized in the `setUpWithError` method of the XCTestCase subclass.
+In the typical usage, `YRobot` is initialized in the `setUpWithError` method of the XCTestCase subclass.
 
-    var bot: UITestsHelper!
+    var bot: YRobot!
 
     @MainActor
     override func setUpWithError() throws {
-        bot = UITestsHelper(app: XCUIApplication())
+        bot = YRobot(app: XCUIApplication())
         bot.launch()
         ...
     }
@@ -37,7 +37,7 @@ In order to use some of the app helpers, some UI elements must be properly confi
 
 UITestsHelper provides a custom accessible back button that is preconfigured to be used in UI testing.
 
-    import UITestsHelperConfigurator
+    import YRobotConfigurator
     
     struct MyView {
         var body: some View {
@@ -56,5 +56,16 @@ Loader
 
         makeAccessible(.loader)
       
-In case a specific accessibility identifier is needed for back buttons and sliders, `UITestsHelper` can be configured to use different identifier when initialized.
+In case a specific accessibility identifier is needed for back buttons and sliders, `YRobot` can be configured to use different identifier when initialized.
 
+## Demo Project
+
+The project in the `Demo` folder showcases the usage of YRobot
+
+### Configuration
+See the Loader.swift and FormView.swift files fo an example of the minimal configuration required for loaders and back buttonds
+
+## Usage
+
+See the `DemoUITests` class for a sample of the usage of `YRobot` with most UI controls and layout elements
+The `BDDTests` showcases the usage of YRobot in conjunction with XCTest_Gherkin to implement the steps of BDD design test case.
