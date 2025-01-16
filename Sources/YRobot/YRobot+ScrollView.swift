@@ -32,7 +32,7 @@ public extension YRobot {
     /// - Parameters:
     ///   - scrollable: The scrollable element. If the element is not scrollable, the function will have no effect
     ///   - horizontally: true for horizontal scrolling, false for vertical. Deafults to false
-    func scrollToFirstElement(_ scrollable: XCUIElement, horizontally: Bool = false) {
+    func scrollToTop(_ scrollable: XCUIElement, horizontally: Bool = false) {
         guard scrollable.elementType == .scrollView || scrollable.elementType == .table || scrollable.elementType == .collectionView else {
             XCTFail("Element is not scrollable")
             return
