@@ -86,13 +86,13 @@ public extension UITestsHelper {
         let selectedMonth = selectedMonthYear.replacingOccurrences(of: selectedYear, with: "").trimmingCharacters(in: .whitespaces)
         let monthSelector = app.pickerWheels.matching(NSPredicate(format: "value = '\(selectedMonth)'")).firstMatch
         let yearSelector = app.pickerWheels.matching(NSPredicate(format: "value = '\(selectedYear)'", selectedYear)).firstMatch
-        
+
         let monthName = localizedMonthName(month).capitalized(with: Locale.current)
-        monthSelector.tap()
-        monthSelector.adjust(toPickerWheelValue: monthName)
-        
+
         yearSelector.adjust(toPickerWheelValue: "\(year)")
-        
+
+        monthSelector.adjust(toPickerWheelValue: monthName)
+
         monthYearButton = picker.buttons["DatePicker.Hide"].firstMatch
         monthYearButton.tap()
     }
