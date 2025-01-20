@@ -184,7 +184,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				37DFA9B42D391BBB007A2E0E /* XCRemoteSwiftPackageReference "XCTest-Gherkin" */,
-				370E1BC12D3EAD7F00FF9D3D /* XCLocalSwiftPackageReference "../../YRobot" */,
+				370E1BC12D3EAD7F00FF9D3D /* XCLocalSwiftPackageReference "../" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 374CA9FF2D391A3A001F0B2A /* Products */;
@@ -484,9 +484,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		370E1BC12D3EAD7F00FF9D3D /* XCLocalSwiftPackageReference "../../YRobot" */ = {
+		370E1BC12D3EAD7F00FF9D3D /* XCLocalSwiftPackageReference "../" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../YRobot;
+			relativePath = ../;
 		};
 /* End XCLocalSwiftPackageReference section */
 
