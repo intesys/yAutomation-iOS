@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YRobotConfigurator
 
 enum HomeRoute: Hashable {
     case form
@@ -17,6 +18,8 @@ enum HomeRoute: Hashable {
     case alerts
 }
 struct HomeView: View {
+    @State var showRunningTestsLabel: Bool = false
+    
     var body: some View {
         NavigationStack {
             List {
@@ -41,7 +44,13 @@ struct HomeView: View {
                 NavigationLink(value: HomeRoute.alerts) {
                     Label("Alerts", systemImage: "rectangle")
                 }
-            }.navigationTitle("🤖 YRobot Demo")
+            } .onAppear {
+                showRunningTestsLabel =  isRunningYRobotTests()
+                if isRunningWith(argument: "ciccio") {
+                    print("--")
+                }
+            }
+            .navigationTitle("🤖 YRobot Demo")
                 .navigationDestination(for: HomeRoute.self) { route in
                     switch route {
                     case .form:
@@ -100,6 +109,15 @@ struct HomeView: View {
                             Label("Menu", systemImage: "list.dash")
                         }
                     }
+                }
+                .overlay {
+                    VStack {
+                        Spacer()
+                        Text("YRobot Tests Running")
+                            .font(.caption)
+                            .monospaced()
+                            .foregroundStyle(Color.gray)
+                    }.opacity(showRunningTestsLabel ? 1.0 : 0.0)
                 }
         }
     }

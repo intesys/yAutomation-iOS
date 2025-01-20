@@ -76,7 +76,8 @@ private final class StepsDefinition: StepDefiner {
             }
         }
     }
-
+    // TODO: METTI esempio di Scenario outline
+    // TODO: specifica come mettere env varibale ecc
 }
 
 class Pippo {

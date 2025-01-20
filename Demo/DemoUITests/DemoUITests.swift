@@ -15,7 +15,7 @@ final class DemoUITests: XCTestCase {
     override func setUpWithError() throws {
         bot = YRobot(app: XCUIApplication())
         continueAfterFailure = false
-        bot.launch()
+        bot.launch(arguments: ["other"])
     }
 
     override func tearDownWithError() throws {

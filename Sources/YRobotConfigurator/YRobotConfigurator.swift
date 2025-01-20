@@ -53,3 +53,14 @@ public extension View {
     }
 }
 
+public func isRunningYRobotTests() -> Bool {
+    return ProcessInfo.processInfo.arguments.contains("--yrobot")
+}
+
+public func isRunningWith(argument: String) -> Bool {
+    var arg = argument
+    if !arg.hasPrefix("--") {
+        arg = "--".appending(arg)
+    }
+    return ProcessInfo.processInfo.arguments.contains(arg)
+}

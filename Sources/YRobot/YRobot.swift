@@ -35,7 +35,11 @@ public class YRobot {
 @MainActor
 public extension YRobot {
   
-    func launch() {
+    func launch(arguments: [String] = []) {
+        app.launchArguments.append("--yrobot")
+        for arg in arguments {
+            app.launchArguments.append("--\(arg)")
+        }
         app.launch()
     }
     

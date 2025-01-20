@@ -6,6 +6,8 @@ The library implements a `YRobot` class that can be used to simplify the most co
 
 ## Usage
 
+### Configuration
+
 In the typical usage, `YRobot` is initialized in the `setUpWithError` method of the XCTestCase subclass.
 
     var bot: YRobot!
@@ -17,7 +19,42 @@ In the typical usage, `YRobot` is initialized in the `setUpWithError` method of 
         ...
     }
 
-Then the helper is invoked one or more times in different test cases.  
+### Checking if the app is running in a test target
+
+Sometimes you might need to execute specific operations only in the test target.
+
+YRobot provides a method for checking if the app was launched with it:
+
+    import YRobotConfigurator
+    ...
+    let isTest = isRunningYRobotTests()
+
+See the Demo `HomeView.swift` file for a sample of this method usage.
+
+### Adding extra launch arguments
+
+Sometimes you might want to identify a specific set of tests, that is, a `XCTestCase` subclass, in order to force some behaviour. For example, you might want to automatically log in users in a set of tests.
+
+YRobot accepts a set of optional launch arguments:
+
+
+    @MainActor
+    override func setUpWithError() throws {
+        bot = YRobot(app: XCUIApplication())
+        bot.launch(arguments: ["skipLogin", "colorizeUsers"])
+        ...
+    }
+    
+In the app source code you will be able to check for the said arguments:
+
+    import YRobotConfigurator
+    ...
+    let shouldSkipLogin = isRunningWith(argument: "skipLogin")
+
+
+### Simulating user interaction
+
+The helper can be invoked one or more times in different test cases.  
 See the following example:
 
     @MainActor
@@ -25,12 +62,32 @@ See the following example:
         bot.tap(button: "Form")
         bot.navigateBack()
     }
-    
+
+The "Form" label refers toeither the text of the button or its accessibility identifier.
+
+More complex helpers are availble for other interactions, like filling in form fields, selecting dates, selecting alert values etc,
+
 For more examples and details, see the demo project.
+
+### Checking for the existance of elements
+
+The usual way to validate a test is to assert the existance of a gibven text or UI element.
+
+YRobot provides a set of helpers:
+
+    bot.assertHasTabBar()
+    bot.assertTabBarHasTabs(count: 3)
+    bot.assertHasImages(count: 2, allowMore: false)
+    bot.assertHasAlert()
+    bot.assertHasAlert(withText: "Alert title")
+    bot.assertStepperExists()
+    bot.assertDatePickerExists()
+    bot.assertActionSheetExists()
+    bot.assertActionSheetHasButtons(["1", "2", "3"])
+
 
 ## Project configuration
 In order to use some of the app helpers, some UI elements must be properly configured in the codebase to be tested.
-
 
 
 ### Back buttons
