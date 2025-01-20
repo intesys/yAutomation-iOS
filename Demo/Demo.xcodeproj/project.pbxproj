@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370E1B962D3EAD4400FF9D3D /* YRobot in Frameworks */ = {isa = PBXBuildFile; productRef = 370E1B952D3EAD4400FF9D3D /* YRobot */; };
+		370E1B982D3EAD4400FF9D3D /* YRobotConfigurator in Frameworks */ = {isa = PBXBuildFile; productRef = 370E1B972D3EAD4400FF9D3D /* YRobotConfigurator */; };
+		370E1BC32D3EAD7F00FF9D3D /* YRobot in Frameworks */ = {isa = PBXBuildFile; productRef = 370E1BC22D3EAD7F00FF9D3D /* YRobot */; };
+		370E1BC52D3EAD7F00FF9D3D /* YRobotConfigurator in Frameworks */ = {isa = PBXBuildFile; productRef = 370E1BC42D3EAD7F00FF9D3D /* YRobotConfigurator */; };
 		374CAA202D391A7A001F0B2A /* YRobot in Frameworks */ = {isa = PBXBuildFile; productRef = 374CAA1F2D391A7A001F0B2A /* YRobot */; };
 		374CAA222D391A7A001F0B2A /* YRobotConfigurator in Frameworks */ = {isa = PBXBuildFile; productRef = 374CAA212D391A7A001F0B2A /* YRobotConfigurator */; };
 		374CAA402D391B01001F0B2A /* YRobot in Frameworks */ = {isa = PBXBuildFile; productRef = 374CAA3F2D391B01001F0B2A /* YRobot */; };
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370E1B982D3EAD4400FF9D3D /* YRobotConfigurator in Frameworks */,
 				374CAA422D391B01001F0B2A /* YRobotConfigurator in Frameworks */,
 				374CAA222D391A7A001F0B2A /* YRobotConfigurator in Frameworks */,
 				374CAA462D391B38001F0B2A /* YRobotConfigurator in Frameworks */,
@@ -59,8 +64,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370E1B962D3EAD4400FF9D3D /* YRobot in Frameworks */,
 				37DFA9B62D391BBB007A2E0E /* XCTest_Gherkin in Frameworks */,
+				370E1BC52D3EAD7F00FF9D3D /* YRobotConfigurator in Frameworks */,
 				374CAA442D391B38001F0B2A /* YRobot in Frameworks */,
+				370E1BC32D3EAD7F00FF9D3D /* YRobot in Frameworks */,
 				374CAA202D391A7A001F0B2A /* YRobot in Frameworks */,
 				374CAA402D391B01001F0B2A /* YRobot in Frameworks */,
 			);
@@ -110,6 +118,7 @@
 				374CAA212D391A7A001F0B2A /* YRobotConfigurator */,
 				374CAA412D391B01001F0B2A /* YRobotConfigurator */,
 				374CAA452D391B38001F0B2A /* YRobotConfigurator */,
+				370E1B972D3EAD4400FF9D3D /* YRobotConfigurator */,
 			);
 			productName = Demo;
 			productReference = 374CA9FE2D391A3A001F0B2A /* Demo.app */;
@@ -137,6 +146,9 @@
 				374CAA3F2D391B01001F0B2A /* YRobot */,
 				374CAA432D391B38001F0B2A /* YRobot */,
 				37DFA9B52D391BBB007A2E0E /* XCTest_Gherkin */,
+				370E1B952D3EAD4400FF9D3D /* YRobot */,
+				370E1BC22D3EAD7F00FF9D3D /* YRobot */,
+				370E1BC42D3EAD7F00FF9D3D /* YRobotConfigurator */,
 			);
 			productName = DemoUITests;
 			productReference = 374CAA132D391A68001F0B2A /* DemoUITests.xctest */;
@@ -171,8 +183,8 @@
 			mainGroup = 374CA9F52D391A3A001F0B2A;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				374CAA3E2D391B01001F0B2A /* XCLocalSwiftPackageReference "../../UITestsHelper" */,
 				37DFA9B42D391BBB007A2E0E /* XCRemoteSwiftPackageReference "XCTest-Gherkin" */,
+				370E1BC12D3EAD7F00FF9D3D /* XCLocalSwiftPackageReference "../../YRobot" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 374CA9FF2D391A3A001F0B2A /* Products */;
@@ -472,9 +484,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		374CAA3E2D391B01001F0B2A /* XCLocalSwiftPackageReference "../../UITestsHelper" */ = {
+		370E1BC12D3EAD7F00FF9D3D /* XCLocalSwiftPackageReference "../../YRobot" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../UITestsHelper;
+			relativePath = ../../YRobot;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -490,6 +502,22 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		370E1B952D3EAD4400FF9D3D /* YRobot */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = YRobot;
+		};
+		370E1B972D3EAD4400FF9D3D /* YRobotConfigurator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = YRobotConfigurator;
+		};
+		370E1BC22D3EAD7F00FF9D3D /* YRobot */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = YRobot;
+		};
+		370E1BC42D3EAD7F00FF9D3D /* YRobotConfigurator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = YRobotConfigurator;
+		};
 		374CAA1F2D391A7A001F0B2A /* YRobot */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = YRobot;
