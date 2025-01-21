@@ -46,6 +46,13 @@ final class DemoUITests: XCTestCase {
         bot.selectTab(index: 0, wait: 0)
     }
     
+    // MARK: - Texts
+    @MainActor
+    func testTexts() throws {
+        bot.assertHas(text: "demo")
+        bot.assertHas(text: "🤖 YRobot Demo", exactMatch: true)
+    }
+    
     // MARK: - Images
     @MainActor
     func testImages() throws {

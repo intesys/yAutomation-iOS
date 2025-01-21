@@ -34,7 +34,9 @@ public class YRobot {
 
 @MainActor
 public extension YRobot {
-  
+    
+    /// Launches YRobot. Must alway be called in the setUpWithError method of XCTestCase
+    /// - Parameter arguments: an optional array of arguments to be attached to the tests suite. The presence of these arguments can be check at runtime with isRunningWith(argument:), in order to check if the app is running in a specific suite of tests. Optional.
     func launch(arguments: [String] = []) {
         app.launchArguments.append("--yrobot")
         for arg in arguments {
@@ -43,25 +45,57 @@ public extension YRobot {
         app.launch()
     }
     
+    /// Asserts that an activity indicator is present on the screen
     func assertHasActivityIndicator() {
         let loader = app.activityIndicators[configuration.loaderIdentifier]
         XCTAssert(loader.waitForExistence(timeout: 1))
     }
     
+    /// Asserts that the screen contains a give text
+    /// - Parameters:
+    ///   - text: The text to search
+    ///   - exactMatch: Whether the text must match exactly a label
+    func assertHas(text: String, exactMatch: Bool = false) {
+        if exactMatch {
+            assertMatchesExactly(text: text)
+        } else {
+            assertContains(text: text)
+        }
+    }
+    
+    private func assertContains(text: String) {
+        let labels = app.staticTexts.allElementsBoundByIndex.map({ $0.label.lowercased() })
+        let allText = labels.joined(separator: " ")
+        XCTAssert(allText.contains(text.lowercased()))
+    }
+    private func assertMatchesExactly(text: String) {
+        let labels = app.staticTexts.allElementsBoundByIndex.map({ $0.label.lowercased() })
+        XCTAssert(labels.contains(text.lowercased()))
+    }
+    
+    /// Pauses the interaction of a given time interval
+    /// - Parameter interval: the interval, in seconds
     func wait(interval: TimeInterval) {
         waitIfAny(interval)
     }
     
+    /// Pauses the interaction of a given optional time interval
+    /// - Parameter interval: the interval, in seconds. Optional.
     func waitIfAny(_ interval: TimeInterval?) {
         if let interval {
             sleep(UInt32(interval))
         }
     }
-
+    
+    /// Navigates back to a previous screen in the navigation stack
     func navigateBack() {
         tap(button: configuration.backButtonIdentifier)
     }
     
+    /// Takes a screenshots and stores it in the test report
+    /// - Parameters:
+    ///   - name: The name to assign to the screenshot
+    ///   - testCase: The test case to associate to the screenshot. Since this method is usually invoked inside  a text case method, this arguments is usually passed as "self".
     func takeScreenshot(name: String, in testCase: XCTestCase) {
         let attachment = XCTAttachment(screenshot: app.screenshot())
         attachment.name = name

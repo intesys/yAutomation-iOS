@@ -13,7 +13,7 @@ Scenario: go to list
     When I tap 'Alerts'
     Then I see 'Alerts'
 
-Scenario: test Pippo
+Scenario: test Engine
     Given I am in the homepage
-    When I use Pippo.increment
-    Then Pippo.count is 1
+    When I use Engine.increment
+    Then Engine.count is 1

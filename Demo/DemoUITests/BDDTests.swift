@@ -27,7 +27,7 @@ class BDDTests: XCTestCase {
                                  testCase: self)
     }
     
-    func test_pippo() {
+    func test_engine() {
        
         NativeRunner.runScenario(featureFile: "gherkin.feature",
                                  scenario: "test Engine",
@@ -62,10 +62,10 @@ private final class StepsDefinition: StepDefiner {
                 
             }
             
-            self.step("I use Pippo.increment") {
+            self.step("I use Engine.increment") {
                 Engine.shared.increment()
             }
-            self.step("Pippo.count is 1") {
+            self.step("Engine.count is 1") {
                 XCTAssert(Engine.shared.count == 1)
             }
         }
