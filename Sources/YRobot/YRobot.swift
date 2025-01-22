@@ -55,23 +55,59 @@ public extension YRobot {
     /// - Parameters:
     ///   - text: The text to search
     ///   - exactMatch: Whether the text must match exactly a label
-    func assertHas(text: String, exactMatch: Bool = false) {
+    func assertHas(text: String, exactMatch: Bool = false, timeout: TimeInterval = 0) {
         if exactMatch {
-            assertMatchesExactly(text: text)
+            assertMatchesExactly(text: text, timeout: timeout)
         } else {
-            assertContains(text: text)
+            assertContains(text: text, timeout: timeout)
         }
     }
     
-    private func assertContains(text: String) {
-        let labels = app.staticTexts.allElementsBoundByIndex.map({ $0.label.lowercased() })
-        let allText = labels.joined(separator: " ")
-        XCTAssert(allText.contains(text.lowercased()))
+    private func assertContains(text: String, timeout: TimeInterval) {
+        if timeout == 0 {
+            let labels = app.staticTexts.allElementsBoundByIndex.map { $0.label.lowercased() }
+            let allText = labels.joined(separator: " ")
+            if allText.contains(text.lowercased()) {
+                return // Text found, test succeeds
+            }
+        }
+        
+        let startTime = Date()
+        while Date().timeIntervalSince(startTime) < timeout {
+            let labels = app.staticTexts.allElementsBoundByIndex.map { $0.label.lowercased() }
+            let allText = labels.joined(separator: " ")
+            
+            if allText.contains(text.lowercased()) {
+                return // Text found, test succeeds
+            }
+            
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1)) // Small delay to avoid busy waiting
+        }
+        
+        XCTFail("Text '\(text)' not found within \(timeout) seconds.")
     }
-    private func assertMatchesExactly(text: String) {
-        let labels = app.staticTexts.allElementsBoundByIndex.map({ $0.label.lowercased() })
-        XCTAssert(labels.contains(text.lowercased()))
+
+    private func assertMatchesExactly(text: String, timeout: TimeInterval) {
+        if timeout == 0 {
+            let labels = app.staticTexts.allElementsBoundByIndex.map { $0.label.lowercased() }
+            if labels.contains(text.lowercased()) {
+                return // Exact match found, test succeeds
+            }
+        }
+        let startTime = Date()
+        while Date().timeIntervalSince(startTime) < timeout {
+            let labels = app.staticTexts.allElementsBoundByIndex.map { $0.label.lowercased() }
+            
+            if labels.contains(text.lowercased()) {
+                return // Exact match found, test succeeds
+            }
+            
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1)) // Small delay to avoid busy waiting
+        }
+        
+        XCTFail("Exact match for text '\(text)' not found within \(timeout) seconds.")
     }
+
     
     /// Pauses the interaction of a given time interval
     /// - Parameter interval: the interval, in seconds

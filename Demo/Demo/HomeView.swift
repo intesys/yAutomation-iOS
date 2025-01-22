@@ -19,7 +19,7 @@ enum HomeRoute: Hashable {
 }
 struct HomeView: View {
     @State var showRunningTestsLabel: Bool = false
-    
+    @State var title = "🤖 YRobot Demo"
     var body: some View {
         NavigationStack {
             List {
@@ -49,8 +49,11 @@ struct HomeView: View {
                 if isRunningWith(argument: "ciccio") {
                     print("--")
                 }
+                Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+                    title = "🤖 YRobot DemoApp"
+                }
             }
-            .navigationTitle("🤖 YRobot Demo")
+            .navigationTitle(title)
                 .navigationDestination(for: HomeRoute.self) { route in
                     switch route {
                     case .form:

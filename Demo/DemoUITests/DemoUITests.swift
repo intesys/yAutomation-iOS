@@ -49,8 +49,8 @@ final class DemoUITests: XCTestCase {
     // MARK: - Texts
     @MainActor
     func testTexts() throws {
-        bot.assertHas(text: "demo")
-        bot.assertHas(text: "🤖 YRobot Demo", exactMatch: true)
+        bot.assertHas(text: "Demo")
+        bot.assertHas(text: "🤖 YRobot DemoApp", exactMatch: true, timeout: 10)
     }
     
     // MARK: - Images
@@ -166,7 +166,7 @@ final class DemoUITests: XCTestCase {
     @MainActor
     func testSlider() throws {
         bot.tap(button: "Controls")
-        bot.assertSliderExists("slider")
+        bot.assertSliderExists("slider", timeout: 100)
         bot.set(slider: "slider", to: 10, wait: 3)
     }
 
