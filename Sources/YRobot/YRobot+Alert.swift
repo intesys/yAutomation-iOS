@@ -19,7 +19,7 @@ public extension YRobot {
     /// Asserts that an alert with the provided text is present on screen
     /// - Parameter timeout: The timeout to wait for the element existence. Defaults: 5
     /// - Parameter wait: An optional delay after the assertion
-    func assertsHasAlert(withText text: String, timeout: TimeInterval = 5, wait: TimeInterval?) {
+    func assertsHasAlert(withText text: String, timeout: TimeInterval = 5, wait: TimeInterval? = nil) {
         let loader = app.alerts
             .descendants(matching: .staticText)[text]
             .firstMatch

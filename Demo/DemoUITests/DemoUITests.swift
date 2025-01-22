@@ -121,16 +121,13 @@ final class DemoUITests: XCTestCase {
         bot.insert(text: "Marvin", in: "firstName")
         bot.insert(text: "Pantalozzi", in: "lastName")
         bot.insert(text: "34567890", in: "phoneNumber")
-        
-        // TODO: toggle not matched
-        // helper.toggle(switch: "isActive")
-        
+                
         bot.tap(button: "saveButton")
         
         bot.assertHasActivityIndicator()
         
         bot.assertHasAlert()
-        // inty.assertHasAlert(withText: "Alert title")
+        bot.assertsHasAlert(withText: "Alert title")
     }
     
     // MARK: - Switch
