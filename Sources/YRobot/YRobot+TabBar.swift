@@ -10,7 +10,7 @@ public extension YRobot {
     
     /// Asserts that a tab bar exists
     /// - Parameter timeout: The timeout to wait for the element existence. Defaults: 0
-    func assertHasTabBar(timeout: TimeInterval = 0) {
+    func assertTabBarExists(timeout: TimeInterval = 0) {
         let tabBar = app.tabBars.firstMatch
         XCTAssert(tabBar.waitForExistence(timeout: timeout))
     }

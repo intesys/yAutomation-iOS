@@ -8,6 +8,15 @@ import XCTest
 @MainActor
 public extension YRobot {
 
+    /// Asserts that a button with the provided identifier is present on screen
+    /// - Parameters:
+    ///   - buttonIdentifier: The date picker identifier
+    ///   - timeout: The timeout to wait for the element existence. Defaults: 0
+    func assertButtonExists(_ buttonIdentifier: String, timeout: TimeInterval = 0) {
+        let picker = app.buttons.matching(identifier: buttonIdentifier).firstMatch
+        XCTAssert(picker.waitForExistence(timeout: timeout))
+    }
+    
     /// Taps the button with the provided identifier
     /// - Parameters:
     ///   - identifier: The button identifier

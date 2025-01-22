@@ -7,6 +7,16 @@ import XCTest
 
 @MainActor
 public extension YRobot {
+    
+    /// Asserts that a toggle with the provided identifier is present on screen
+    /// - Parameters:
+    ///   - toggleIdentifier: The date picker identifier
+    ///   - timeout: The timeout to wait for the element existence. Defaults: 0
+    func assertSwitchExists(_ toggleIdentifier: String, timeout: TimeInterval = 0) {
+        let toggle = app.switches.matching(identifier: toggleIdentifier).firstMatch
+        XCTAssert(toggle.waitForExistence(timeout: timeout))
+    }
+    
     /// Toggles on the toggle element with the provided identifier
     /// - Parameters:
     ///   - toggleIidentifier: The toggle identifier
@@ -23,8 +33,8 @@ public extension YRobot {
     ///   - toggleIidentifier: The toggle identifier
     ///   - value: The boolean value to apply to the toggle
     ///   - wait: Optional: a delay which will be applied after the toggling
-    func set(toggle toggleIidentifier: String, to value: Bool, wait: TimeInterval? = nil) {
-        let actualSwitch = internalSwitch(switchIdentifier: toggleIidentifier)
+    func set(switch switchIdentifier: String, to value: Bool, wait: TimeInterval? = nil) {
+        let actualSwitch = internalSwitch(switchIdentifier: switchIdentifier)
         guard let stringValue = actualSwitch.value as? String, let intValue = Int(stringValue) else {
             XCTFail("Cannot egt switch value")
             return

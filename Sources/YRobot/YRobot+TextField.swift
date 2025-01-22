@@ -8,6 +8,15 @@ import XCTest
 @MainActor
 public extension YRobot {
 
+    /// Asserts that a text field with the provided identifier is present on screen
+    /// - Parameters:
+    ///   - textFieldIdentifier: The date picker identifier
+    ///   - timeout: The timeout to wait for the element existence. Defaults: 0
+    func assertTextFieldExists(_ textFieldIdentifier: String, timeout: TimeInterval = 0) {
+        let textField = app.buttons.matching(identifier: textFieldIdentifier).firstMatch
+        XCTAssert(textField.waitForExistence(timeout: timeout))
+    }
+    
     /// Inserts the provided text into the text field matching fhe provided identifier
     /// - Parameters:
     ///   - text: The text to insert

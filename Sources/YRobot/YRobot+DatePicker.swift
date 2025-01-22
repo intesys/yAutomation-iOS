@@ -12,7 +12,7 @@ public extension YRobot {
     /// Asserts that a date picker with the provided identifier is present on screen
     /// - Parameters:
     ///   - datePickerIdentifier: The date picker identifier
-    ///   -  timeout: The timeout to wait for the element existence. Defaults: 0
+    ///   - timeout: The timeout to wait for the element existence. Defaults: 0
     func assertDatePickerExists(_ datePickerIdentifier: String, timeout: TimeInterval = 0) {
         let picker = app.datePickers.matching(identifier: datePickerIdentifier).firstMatch
         XCTAssert(picker.waitForExistence(timeout: timeout))

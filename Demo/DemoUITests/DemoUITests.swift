@@ -39,7 +39,7 @@ final class DemoUITests: XCTestCase {
     // MARK: - Tabs
     @MainActor
     func testTabBar() throws {
-        bot.assertHasTabBar()
+        bot.assertTabBarExists()
         bot.assertTabBarHasTabs(count: 3)
         bot.selectTab(index: 1, wait: 1)
         bot.selectTab(index: 2, wait: 2)
@@ -138,11 +138,11 @@ final class DemoUITests: XCTestCase {
 
         bot.toggle("toggle", wait: 2)
         
-        bot.set(toggle: "toggle", to: false, wait: 1)
-        bot.set(toggle: "toggle", to: true, wait: 1)
-        bot.set(toggle: "toggle", to: false, wait: 1)
-        bot.set(toggle: "toggle", to: false, wait: 1)
-        bot.set(toggle: "toggle", to: true, wait: 1)
+        bot.set(switch: "toggle", to: false, wait: 1)
+        bot.set(switch: "toggle", to: true, wait: 1)
+        bot.set(switch: "toggle", to: false, wait: 1)
+        bot.set(switch: "toggle", to: false, wait: 1)
+        bot.set(switch: "toggle", to: true, wait: 1)
     }
     
     // MARK: - Stepper
