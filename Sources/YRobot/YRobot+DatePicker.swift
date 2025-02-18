@@ -146,8 +146,20 @@ public extension YRobot {
 
 
         hoursSelector.adjust(toPickerWheelValue: "\(hours)")
-
         minutesSelector.adjust(toPickerWheelValue: "\(minutes)")
 
+    }
+    
+    func pickTimeInWheelPicker(hours: Int, minutes: Int, in datePickerIdentifier: String, wait: TimeInterval? = nil) {
+        
+        let picker = app.datePickers[datePickerIdentifier].firstMatch
+        
+        let hoursSelector = picker.pickerWheels.allElementsBoundByIndex[0]
+        let minutesSelector = picker.pickerWheels.allElementsBoundByIndex[1]
+
+        hoursSelector.adjust(toPickerWheelValue: "\(hours)")
+        minutesSelector.adjust(toPickerWheelValue: "\(minutes)")
+      
+        waitIfAny(wait)
     }
 }

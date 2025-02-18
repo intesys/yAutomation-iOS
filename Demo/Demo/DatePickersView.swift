@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum DatePickersId : String {
-    case  datePicker, dateWheelPicker, timePicker
+    case  datePicker, dateWheelPicker, timePicker, timeWheelPicker
 }
 
 struct DatePickersView: View {
@@ -21,17 +21,13 @@ struct DatePickersView: View {
             Section {
                 DatePicker(selection: $birthDate, in: ...Date.now, displayedComponents: .date) {
                     Text("Select a date")
-                }.accessibilityIdentifier(DatePickersId.datePicker.rawValue)
-            }
-            
-            Section {
+                }.datePickerStyle(.compact)
+                .accessibilityIdentifier(DatePickersId.datePicker.rawValue)
+      
                 DatePicker(selection: $birthDate, in: ...Date.now, displayedComponents: .date) {
                     Text("Select a date")
                 }.accessibilityIdentifier(DatePickersId.dateWheelPicker.rawValue)
-                    .datePickerStyle(.automatic)
-            }
-            
-            Section {
+                    .datePickerStyle(.wheel)
                 Text("Date is \(birthDate.formatted(date: .long, time: .omitted))")
                     .font(.headline)
             }
@@ -40,8 +36,13 @@ struct DatePickersView: View {
                 DatePicker(selection: $time, displayedComponents: .hourAndMinute) {
                     Text("Select a time")
                 }.accessibilityIdentifier(DatePickersId.timePicker.rawValue)
-                    .datePickerStyle(.automatic)
-
+                    .datePickerStyle(.compact)
+  
+                DatePicker(selection: $time, displayedComponents: .hourAndMinute) {
+                    Text("Select a time")
+                }.datePickerStyle(.wheel)
+                .accessibilityIdentifier(DatePickersId.timeWheelPicker.rawValue)
+   
                 Text("Time is \(time.formatted(date: .omitted, time: .shortened))")
                     .font(.headline)
             }

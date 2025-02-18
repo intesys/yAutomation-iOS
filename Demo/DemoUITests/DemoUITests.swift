@@ -206,6 +206,15 @@ final class DemoUITests: XCTestCase {
         bot.pickTimeInCompactPicker(hours: 15, minutes: 45, in: "timePicker")
     }
     
+    @MainActor
+    func testWheelTimePicker() throws {
+        bot.tap(button: "Date Pickers")
+
+        bot.assertDatePickerExists("timeWheelPicker")
+                
+        bot.pickTimeInWheelPicker(hours: 16, minutes: 25, in: "timeWheelPicker")
+    }
+    
     // MARK: - Items Pickers
     @MainActor
     func testListPicker() throws {
