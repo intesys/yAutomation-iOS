@@ -61,11 +61,6 @@ public extension YRobot {
         waitIfAny(wait)
     }
     
-    /// Sets the specified day and month on the given date picker
-    /// - Parameters:
-    ///   - month: The month as an Int
-    ///   - year: The year
-    ///   - picker: The target date picker
     private func setCalendarDatePicker(month: Int, year: Int, picker: XCUIElement) {
         var monthYearButton = picker.buttons["DatePicker.Show"].firstMatch
 
@@ -126,5 +121,33 @@ public extension YRobot {
         dateFormatter.locale = Locale(identifier: "en_US")//Locale.current
         let monthName = dateFormatter.standaloneMonthSymbols[number - 1]
         return monthName
+    }
+    
+    
+    func pickTimeInCompactPicker(hours: Int, minutes: Int, in datePickerIdentifier: String, wait: TimeInterval? = nil) {
+        
+        let tappedPicker = app.datePickers.matching(identifier: datePickerIdentifier).firstMatch
+        XCTAssert(tappedPicker.exists)
+
+
+        setCompactTimePicker(hours: hours, minutes: minutes, picker: tappedPicker)
+        
+        
+        app.buttons["PopoverDismissRegion"].firstMatch.tap()
+      
+        waitIfAny(wait)
+    }
+    
+    private func setCompactTimePicker(hours: Int, minutes: Int, picker: XCUIElement) {
+
+     
+        let hoursSelector = app.pickerWheels.allElementsBoundByIndex[0]
+        let minutesSelector = app.pickerWheels.allElementsBoundByIndex[1]
+
+
+        hoursSelector.adjust(toPickerWheelValue: "\(hours)")
+
+        minutesSelector.adjust(toPickerWheelValue: "\(minutes)")
+
     }
 }

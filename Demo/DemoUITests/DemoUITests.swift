@@ -167,7 +167,7 @@ final class DemoUITests: XCTestCase {
         bot.set(slider: "slider", to: 10, wait: 3)
     }
 
-    // MARK: - Pickers
+    // MARK: - Date Pickers
     @MainActor
     func testCalendarDatePicker() throws {
         bot.tap(button: "Date Pickers")
@@ -194,7 +194,19 @@ final class DemoUITests: XCTestCase {
                                    in: "dateWheelPicker",
                                    wait: 2)
     }
+    // MARK: - Time Pickers
+    @MainActor
+    func testCompactTimePicker() throws {
+        bot.tap(button: "Date Pickers")
+
+        bot.assertDatePickerExists("timePicker")
+        
+        bot.select(datePickerIdentifier: "timePicker")
+        
+        bot.pickTimeInCompactPicker(hours: 15, minutes: 45, in: "timePicker")
+    }
     
+    // MARK: - Items Pickers
     @MainActor
     func testListPicker() throws {
         bot.tap(button: "Pickers")
