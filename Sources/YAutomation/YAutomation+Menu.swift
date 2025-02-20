@@ -1,13 +1,13 @@
 //
-//  YRobot+Menu.swift
+//  YAutomation+Menu.swift
 //
-//  Created by Davide Benini on 15/01/25.
+//  Created by Intesys on 15/01/25.
 //
 
 import XCTest
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
     
     /// Returns a menu with the given title
     /// - Parameter title: the menu title

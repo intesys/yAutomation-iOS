@@ -2,11 +2,11 @@
 //  HomeView.swift
 //  Sandboxer
 //
-//  Created by Davide Benini on 21/10/24.
+//  Created by Intesys on 21/10/24.
 //
 
 import SwiftUI
-import YRobotConfigurator
+import yAutomationConfigurator
 
 enum HomeRoute: Hashable {
     case form
@@ -19,7 +19,7 @@ enum HomeRoute: Hashable {
 }
 struct HomeView: View {
     @State var showRunningTestsLabel: Bool = false
-    @State var title = "🤖 YRobot Demo"
+    @State var title = "🤖 yAutomation Demo"
     var body: some View {
         NavigationStack {
             List {
@@ -45,12 +45,13 @@ struct HomeView: View {
                     Label("Alerts", systemImage: "rectangle")
                 }
             } .onAppear {
-                showRunningTestsLabel =  isRunningYRobotTests()
+                showRunningTestsLabel =  isRunningYAutomationTests()
                 if isRunningWith(argument: "ciccio") {
                     print("--")
                 }
+                // To test exact match with a timeout
                 Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
-                    title = "🤖 YRobot DemoApp"
+                    title = "🤖 yAutomation 🤖"
                 }
             }
             .navigationTitle(title)
@@ -116,7 +117,7 @@ struct HomeView: View {
                 .overlay {
                     VStack {
                         Spacer()
-                        Text("YRobot Tests Running")
+                        Text("YAutomation Tests Running")
                             .font(.caption)
                             .monospaced()
                             .foregroundStyle(Color.gray)

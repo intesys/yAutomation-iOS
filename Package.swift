@@ -4,26 +4,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "YRobot",
+    name: "yAutomation",
     platforms: [
         .iOS("15.0")
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "YRobot",
-            targets: ["YRobot"]),
+            name: "yAutomation",
+            targets: ["yAutomation"]),
         .library(
-            name: "YRobotConfigurator",
-            targets: ["YRobotConfigurator"]),
+            name: "yAutomationConfigurator",
+            targets: ["yAutomationConfigurator"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "YRobot"),
-        .target(name: "YRobotConfigurator",
-                sources: ["YRobotConfigurator.swift"])
+            name: "yAutomation"),
+        .target(name: "yAutomationConfigurator",
+                sources: ["YAutomationConfigurator.swift"])
 
     ]
 )

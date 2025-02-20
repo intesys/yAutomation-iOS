@@ -1,12 +1,12 @@
 //
-//  YRobot+Search.swift
+//  YAutomation+Search.swift
 //
-//  Created by Davide Benini on 15/01/25.
+//  Created by Intesys on 15/01/25.
 //
 import XCTest
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
     
     /// Returns the first text field on the screen
     /// - Parameter revealHidden: whether to scroll down to reveal a hidden table text field

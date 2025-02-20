@@ -1,13 +1,13 @@
 //
-//  YRobot+Alert.swift
+//  YAutomation+Alert.swift
 //
-//  Created by Davide Benini on 21/10/24.
+//  Created by Intesys on 21/10/24.
 //
 
 import XCTest
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
     
     /// Asserts that an alert is present on screen
     /// - Parameter timeout: The timeout to wait for the element existence. Defaults: 5

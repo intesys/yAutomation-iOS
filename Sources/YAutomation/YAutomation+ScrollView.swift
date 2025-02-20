@@ -1,7 +1,7 @@
 //
-//  YRobot+ScrollView.swift
+//  YAutomation+ScrollView.swift
 //
-//  Created by Davide Benini on 23/10/24.
+//  Created by Intesys on 23/10/24.
 //
 import XCTest
 
@@ -11,7 +11,7 @@ public enum ScrollDirection {
 }
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
 
     /// Scrolls the given element until the button with the provided title is visible
     /// - Parameters:

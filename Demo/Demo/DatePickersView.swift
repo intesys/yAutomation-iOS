@@ -2,7 +2,7 @@
 //  DatePickersView.swift
 //  Sandboxer
 //
-//  Created by Davide Benini on 28/10/24.
+//  Created by Intesys on 28/10/24.
 //
 
 import SwiftUI

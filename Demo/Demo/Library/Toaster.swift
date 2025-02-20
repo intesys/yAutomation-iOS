@@ -2,8 +2,8 @@
 //  Toaster.swift
 //  Toaster
 //
-//  Created by Davide Benini on 02/12/2019.
-//  Copyright © 2019 Davide Benini. All rights reserved.
+//  Created by Intesys on 02/12/2019.
+//  Copyright © 2019 Intesys. All rights reserved.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  ControlsView.swift
 //  Sandboxer
 //
-//  Created by Davide Benini on 24/10/24.
+//  Created by Intesys on 24/10/24.
 //
 
 import SwiftUI

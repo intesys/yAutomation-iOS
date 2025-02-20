@@ -2,7 +2,7 @@
 //  DemoApp.swift
 //  Demo
 //
-//  Created by Davide Benini on 16/01/25.
+//  Created by Intesys on 16/01/25.
 //
 
 import SwiftUI

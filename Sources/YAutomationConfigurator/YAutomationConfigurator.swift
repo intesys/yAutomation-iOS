@@ -2,7 +2,7 @@
 //  UITestHelperConfigurator.swift
 //  UITestsHelper
 //
-//  Created by Davide Benini on 14/01/25.
+//  Created by Intesys on 14/01/25.
 //
 import SwiftUI
 
@@ -53,8 +53,8 @@ public extension View {
     }
 }
 
-public func isRunningYRobotTests() -> Bool {
-    return ProcessInfo.processInfo.arguments.contains("--yrobot")
+public func isRunningYAutomationTests() -> Bool {
+    return ProcessInfo.processInfo.arguments.contains("--yautomation")
 }
 
 public func isRunningWith(argument: String) -> Bool {

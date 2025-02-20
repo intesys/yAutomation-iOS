@@ -1,12 +1,12 @@
 //
-//  YRobot+Toggle.swift
+//  YAutomation+Toggle.swift
 //
-//  Created by Davide Benini on 28/10/24.
+//  Created by Intesys on 28/10/24.
 //
 import XCTest
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
     
     /// Asserts that a toggle with the provided identifier is present on screen
     /// - Parameters:

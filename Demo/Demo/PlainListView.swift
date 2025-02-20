@@ -2,7 +2,7 @@
 //  PlainListView.swift
 //  Sandboxer
 //
-//  Created by Davide Benini on 21/10/24.
+//  Created by Intesys on 21/10/24.
 //
 
 import SwiftUI

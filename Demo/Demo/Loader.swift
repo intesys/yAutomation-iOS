@@ -2,11 +2,11 @@
 //  View+Loading.swift
 //  Sandboxer
 //
-//  Created by Davide Benini on 21/10/24.
+//  Created by Intesys on 21/10/24.
 //
 
 import SwiftUI
-import YRobotConfigurator
+import yAutomationConfigurator
 
 struct Loader: ViewModifier {
     @Binding var loading: Bool

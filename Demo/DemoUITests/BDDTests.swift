@@ -2,17 +2,17 @@
 //  BDDTests.swift
 //  Sandboxer
 //
-//  Created by Davide Benini on 30/10/24.
+//  Created by Intesys on 30/10/24.
 //
 
 import XCTest
 import XCTest_Gherkin
 @testable import Demo
-import YRobot
+import yAutomation
 
 class BDDTests: XCTestCase {
     
-    var inty: YRobot!
+    var inty: YAutomation!
     
     @MainActor
     override func setUpWithError() throws {
@@ -37,11 +37,11 @@ class BDDTests: XCTestCase {
 
 private final class StepsDefinition: StepDefiner {
     
-    var bot: YRobot!
+    var bot: YAutomation!
 
     required init(test: XCTestCase, regexOptions: NSRegularExpression.Options = [.caseInsensitive]) {
-        let configuration = YRobotConfiguration.defaultConfiguration
-        bot = YRobot(app: XCUIApplication(), configuration: configuration)
+        let configuration = YAutomationConfiguration.defaultConfiguration
+        bot = YAutomation(app: XCUIApplication(), configuration: configuration)
 
         super.init(test: test, regexOptions: regexOptions)
         

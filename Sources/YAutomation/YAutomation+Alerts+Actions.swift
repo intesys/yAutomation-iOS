@@ -1,12 +1,12 @@
 //
-//  YRobot+Alerts+Actions.swift
+//  YAutomation+Alerts+Actions.swift
 //
-//  Created by Davide Benini on 28/10/24.
+//  Created by Intesys on 28/10/24.
 //
 import XCTest
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
     /// Asserts that an alert exists
     func assertAlertExists() {
         let alert = app.alerts.firstMatch

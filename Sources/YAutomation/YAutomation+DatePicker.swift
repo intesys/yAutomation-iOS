@@ -1,13 +1,13 @@
 //
-//  YRobot+DatePicker.swift
+//  YAutomation+DatePicker.swift
 //
-//  Created by Davide Benini on 24/10/24.
+//  Created by Intesys on 24/10/24.
 //
 import Foundation
 import XCTest
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
     
     /// Asserts that a date picker with the provided identifier is present on screen
     /// - Parameters:

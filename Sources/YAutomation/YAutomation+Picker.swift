@@ -1,14 +1,14 @@
 //
-//  YRobot+Picker.swift
+//  YAutomation+Picker.swift
 //
-//  Created by Davide Benini on 28/10/24.
+//  Created by Intesys on 28/10/24.
 //
 
 import Foundation
 import XCTest
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
     
     /// Select the give text in the specified list picker; optionally specify a delay after the action
     /// - Parameters:

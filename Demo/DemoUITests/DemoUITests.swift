@@ -2,18 +2,18 @@
 //  DemoUITests.swift
 //  DemoUITests
 //
-//  Created by Davide Benini on 16/01/25.
+//  Created by Intesys on 16/01/25.
 //
 
 import XCTest
-import YRobot
+import yAutomation
 final class DemoUITests: XCTestCase {
 
-    var bot: YRobot!
+    var bot: YAutomation!
     
     @MainActor
     override func setUpWithError() throws {
-        bot = YRobot(app: XCUIApplication())
+        bot = YAutomation(app: XCUIApplication())
         continueAfterFailure = false
         bot.launch(arguments: ["other"])
     }
@@ -50,7 +50,7 @@ final class DemoUITests: XCTestCase {
     @MainActor
     func testTexts() throws {
         bot.assertHas(text: "Demo")
-        bot.assertHas(text: "🤖 YRobot DemoApp", exactMatch: true, timeout: 10)
+        bot.assertHas(text: "🤖 yAutomation 🤖", exactMatch: true, timeout: 10)
     }
     
     // MARK: - Images

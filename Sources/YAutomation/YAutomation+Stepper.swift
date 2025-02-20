@@ -1,12 +1,12 @@
 //
-//  YRobot+Stepper.swift
+//  YAutomation+Stepper.swift
 //
-//  Created by Davide Benini on 24/10/24.
+//  Created by Intesys on 24/10/24.
 //
 import XCTest
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
     
     /// Asserts that a stepper with the provided identifier is present on screen
     /// - Parameters:

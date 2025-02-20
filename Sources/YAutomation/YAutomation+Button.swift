@@ -1,12 +1,12 @@
 //
-//  YRobot+Button.swift
+//  YAutomation+Button.swift
 //
-//  Created by Davide Benini on 21/10/24.
+//  Created by Intesys on 21/10/24.
 //
 import XCTest
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
 
     /// Asserts that a button with the provided identifier is present on screen
     /// - Parameters:

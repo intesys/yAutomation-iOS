@@ -1,12 +1,12 @@
 //
-//  YRobot+Images.swift
+//  YAutomation+Images.swift
 //
-//  Created by Davide Benini on 15/01/25.
+//  Created by Intesys on 15/01/25.
 //
 import XCTest
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
     
     /// Asserts that the specified number of images is present on screen
     /// - Parameters:

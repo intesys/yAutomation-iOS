@@ -2,11 +2,11 @@
 //  ContentView.swift
 //  Sandboxer
 //
-//  Created by Davide Benini on 21/10/24.
+//  Created by Intesys on 21/10/24.
 //
 
 import SwiftUI
-import YRobotConfigurator
+import yAutomationConfigurator
 
 func delay(_ seconds: Double, queue: DispatchQueue = DispatchQueue.main, block: @escaping () -> Void) {
     queue.asyncAfter(deadline: .now() + seconds) {

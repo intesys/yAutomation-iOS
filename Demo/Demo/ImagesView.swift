@@ -2,7 +2,7 @@
 //  ImagesView.swift
 //  UIPlayground
 //
-//  Created by Davide Benini on 15/01/25.
+//  Created by Intesys on 15/01/25.
 //
 
 import SwiftUI

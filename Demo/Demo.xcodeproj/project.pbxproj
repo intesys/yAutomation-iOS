@@ -7,17 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		370E1B962D3EAD4400FF9D3D /* YRobot in Frameworks */ = {isa = PBXBuildFile; productRef = 370E1B952D3EAD4400FF9D3D /* YRobot */; };
-		370E1B982D3EAD4400FF9D3D /* YRobotConfigurator in Frameworks */ = {isa = PBXBuildFile; productRef = 370E1B972D3EAD4400FF9D3D /* YRobotConfigurator */; };
-		370E1BC32D3EAD7F00FF9D3D /* YRobot in Frameworks */ = {isa = PBXBuildFile; productRef = 370E1BC22D3EAD7F00FF9D3D /* YRobot */; };
-		370E1BC52D3EAD7F00FF9D3D /* YRobotConfigurator in Frameworks */ = {isa = PBXBuildFile; productRef = 370E1BC42D3EAD7F00FF9D3D /* YRobotConfigurator */; };
-		374CAA202D391A7A001F0B2A /* YRobot in Frameworks */ = {isa = PBXBuildFile; productRef = 374CAA1F2D391A7A001F0B2A /* YRobot */; };
-		374CAA222D391A7A001F0B2A /* YRobotConfigurator in Frameworks */ = {isa = PBXBuildFile; productRef = 374CAA212D391A7A001F0B2A /* YRobotConfigurator */; };
-		374CAA402D391B01001F0B2A /* YRobot in Frameworks */ = {isa = PBXBuildFile; productRef = 374CAA3F2D391B01001F0B2A /* YRobot */; };
-		374CAA422D391B01001F0B2A /* YRobotConfigurator in Frameworks */ = {isa = PBXBuildFile; productRef = 374CAA412D391B01001F0B2A /* YRobotConfigurator */; };
-		374CAA442D391B38001F0B2A /* YRobot in Frameworks */ = {isa = PBXBuildFile; productRef = 374CAA432D391B38001F0B2A /* YRobot */; };
-		374CAA462D391B38001F0B2A /* YRobotConfigurator in Frameworks */ = {isa = PBXBuildFile; productRef = 374CAA452D391B38001F0B2A /* YRobotConfigurator */; };
+		375AA8CA2D71BA1900B9398B /* yAutomation in Frameworks */ = {isa = PBXBuildFile; productRef = 375AA8C92D71BA1900B9398B /* yAutomation */; };
+		375AA8CC2D71BA1900B9398B /* yAutomationConfigurator in Frameworks */ = {isa = PBXBuildFile; productRef = 375AA8CB2D71BA1900B9398B /* yAutomationConfigurator */; };
 		37DFA9B62D391BBB007A2E0E /* XCTest_Gherkin in Frameworks */ = {isa = PBXBuildFile; productRef = 37DFA9B52D391BBB007A2E0E /* XCTest_Gherkin */; };
+		37E349002D71C24400F5138B /* yAutomation in Frameworks */ = {isa = PBXBuildFile; productRef = 37E348FF2D71C24400F5138B /* yAutomation */; };
+		37E349022D71C24400F5138B /* yAutomationConfigurator in Frameworks */ = {isa = PBXBuildFile; productRef = 37E349012D71C24400F5138B /* yAutomationConfigurator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				370E1B982D3EAD4400FF9D3D /* YRobotConfigurator in Frameworks */,
-				374CAA422D391B01001F0B2A /* YRobotConfigurator in Frameworks */,
-				374CAA222D391A7A001F0B2A /* YRobotConfigurator in Frameworks */,
-				374CAA462D391B38001F0B2A /* YRobotConfigurator in Frameworks */,
+				37E349022D71C24400F5138B /* yAutomationConfigurator in Frameworks */,
+				375AA8CC2D71BA1900B9398B /* yAutomationConfigurator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,13 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				370E1B962D3EAD4400FF9D3D /* YRobot in Frameworks */,
 				37DFA9B62D391BBB007A2E0E /* XCTest_Gherkin in Frameworks */,
-				370E1BC52D3EAD7F00FF9D3D /* YRobotConfigurator in Frameworks */,
-				374CAA442D391B38001F0B2A /* YRobot in Frameworks */,
-				370E1BC32D3EAD7F00FF9D3D /* YRobot in Frameworks */,
-				374CAA202D391A7A001F0B2A /* YRobot in Frameworks */,
-				374CAA402D391B01001F0B2A /* YRobot in Frameworks */,
+				375AA8CA2D71BA1900B9398B /* yAutomation in Frameworks */,
+				37E349002D71C24400F5138B /* yAutomation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,10 +103,8 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				374CAA212D391A7A001F0B2A /* YRobotConfigurator */,
-				374CAA412D391B01001F0B2A /* YRobotConfigurator */,
-				374CAA452D391B38001F0B2A /* YRobotConfigurator */,
-				370E1B972D3EAD4400FF9D3D /* YRobotConfigurator */,
+				375AA8CB2D71BA1900B9398B /* yAutomationConfigurator */,
+				37E349012D71C24400F5138B /* yAutomationConfigurator */,
 			);
 			productName = Demo;
 			productReference = 374CA9FE2D391A3A001F0B2A /* Demo.app */;
@@ -142,13 +128,9 @@
 			);
 			name = DemoUITests;
 			packageProductDependencies = (
-				374CAA1F2D391A7A001F0B2A /* YRobot */,
-				374CAA3F2D391B01001F0B2A /* YRobot */,
-				374CAA432D391B38001F0B2A /* YRobot */,
 				37DFA9B52D391BBB007A2E0E /* XCTest_Gherkin */,
-				370E1B952D3EAD4400FF9D3D /* YRobot */,
-				370E1BC22D3EAD7F00FF9D3D /* YRobot */,
-				370E1BC42D3EAD7F00FF9D3D /* YRobotConfigurator */,
+				375AA8C92D71BA1900B9398B /* yAutomation */,
+				37E348FF2D71C24400F5138B /* yAutomation */,
 			);
 			productName = DemoUITests;
 			productReference = 374CAA132D391A68001F0B2A /* DemoUITests.xctest */;
@@ -184,7 +166,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				37DFA9B42D391BBB007A2E0E /* XCRemoteSwiftPackageReference "XCTest-Gherkin" */,
-				370E1BC12D3EAD7F00FF9D3D /* XCLocalSwiftPackageReference "../" */,
+				37E348FE2D71C24400F5138B /* XCLocalSwiftPackageReference "../../yAutomation" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 374CA9FF2D391A3A001F0B2A /* Products */;
@@ -364,6 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
@@ -394,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
@@ -486,9 +470,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		370E1BC12D3EAD7F00FF9D3D /* XCLocalSwiftPackageReference "../" */ = {
+		37E348FE2D71C24400F5138B /* XCLocalSwiftPackageReference "../../yAutomation" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../;
+			relativePath = ../../yAutomation;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -504,50 +488,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		370E1B952D3EAD4400FF9D3D /* YRobot */ = {
+		375AA8C92D71BA1900B9398B /* yAutomation */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = YRobot;
+			productName = yAutomation;
 		};
-		370E1B972D3EAD4400FF9D3D /* YRobotConfigurator */ = {
+		375AA8CB2D71BA1900B9398B /* yAutomationConfigurator */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = YRobotConfigurator;
-		};
-		370E1BC22D3EAD7F00FF9D3D /* YRobot */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = YRobot;
-		};
-		370E1BC42D3EAD7F00FF9D3D /* YRobotConfigurator */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = YRobotConfigurator;
-		};
-		374CAA1F2D391A7A001F0B2A /* YRobot */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = YRobot;
-		};
-		374CAA212D391A7A001F0B2A /* YRobotConfigurator */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = YRobotConfigurator;
-		};
-		374CAA3F2D391B01001F0B2A /* YRobot */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = YRobot;
-		};
-		374CAA412D391B01001F0B2A /* YRobotConfigurator */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = YRobotConfigurator;
-		};
-		374CAA432D391B38001F0B2A /* YRobot */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = YRobot;
-		};
-		374CAA452D391B38001F0B2A /* YRobotConfigurator */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = YRobotConfigurator;
+			productName = yAutomationConfigurator;
 		};
 		37DFA9B52D391BBB007A2E0E /* XCTest_Gherkin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 37DFA9B42D391BBB007A2E0E /* XCRemoteSwiftPackageReference "XCTest-Gherkin" */;
 			productName = XCTest_Gherkin;
+		};
+		37E348FF2D71C24400F5138B /* yAutomation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = yAutomation;
+		};
+		37E349012D71C24400F5138B /* yAutomationConfigurator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = yAutomationConfigurator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

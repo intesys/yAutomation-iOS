@@ -1,10 +1,10 @@
 //
-//  YRobot.swift
+//  YAutomation.swift
 //
-//  Created by Davide Benini on 21/10/24.
+//  Created by Intesys on 21/10/24.
 //
 import XCTest
-public struct YRobotConfiguration {
+public struct YAutomationConfiguration {
     
     public static let defaultLoaderIdentifier = "loader"
     public static let defaultBackButtonIdentifier = "backButton"
@@ -14,31 +14,31 @@ public struct YRobotConfiguration {
     var backButtonIdentifier: String
     var scrollingVelocity: XCUIGestureVelocity
 
-    public static var defaultConfiguration: YRobotConfiguration {
-        YRobotConfiguration(loaderIdentifier: YRobotConfiguration.defaultLoaderIdentifier,
-                            backButtonIdentifier: YRobotConfiguration.defaultBackButtonIdentifier ,
-                            scrollingVelocity: YRobotConfiguration.defaultScrollingVelocity)
+    public static var defaultConfiguration: YAutomationConfiguration {
+        YAutomationConfiguration(loaderIdentifier: YAutomationConfiguration.defaultLoaderIdentifier,
+                            backButtonIdentifier: YAutomationConfiguration.defaultBackButtonIdentifier ,
+                            scrollingVelocity: YAutomationConfiguration.defaultScrollingVelocity)
     }
 }
 
 
-public class YRobot {
+public class YAutomation {
     public var app: XCUIApplication
-    public var configuration: YRobotConfiguration = .defaultConfiguration
+    public var configuration: YAutomationConfiguration = .defaultConfiguration
     
-    public init(app: XCUIApplication, configuration: YRobotConfiguration = .defaultConfiguration) {
+    public init(app: XCUIApplication, configuration: YAutomationConfiguration = .defaultConfiguration) {
         self.app = app
         self.configuration = configuration
     }
 }
 
 @MainActor
-public extension YRobot {
+public extension YAutomation {
     
-    /// Launches YRobot. Must alway be called in the setUpWithError method of XCTestCase
+    /// Launches YAutomation. Must alway be called in the setUpWithError method of XCTestCase
     /// - Parameter arguments: an optional array of arguments to be attached to the tests suite. The presence of these arguments can be check at runtime with isRunningWith(argument:), in order to check if the app is running in a specific suite of tests. Optional.
     func launch(arguments: [String] = []) {
-        app.launchArguments.append("--yrobot")
+        app.launchArguments.append("--yautomation")
         for arg in arguments {
             app.launchArguments.append("--\(arg)")
         }
